@@ -46,7 +46,7 @@ class IntroPage extends StatelessWidget {
             
               // start now button
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40.0),
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: GestureDetector(
                   onTap: () => Navigator.push(
                     context, 

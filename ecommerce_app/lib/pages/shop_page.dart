@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/components/shoe_tile.dart';
+import 'package:ecommerce_app/models/shoe.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatefulWidget {
@@ -71,11 +72,17 @@ class _ShopPageState extends State<ShopPage> {
 
         Expanded(
           child: ListView.builder(
+            itemCount: 4,
+						scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              Shoe shoe = Shoe(name: 'Blue', price: '200', description: , imagePath: '/l');
-							return ShoeTile(
-								shoe: ,
-							);
+              Shoe shoe = Shoe(
+                  name: 'Blue',
+                  price: '200',
+                  description: 'blue shoe',
+                  imagePath: 'lib/images/blue.png');
+              return ShoeTile(
+                shoe: shoe,
+              );
             },
           ),
         ),
