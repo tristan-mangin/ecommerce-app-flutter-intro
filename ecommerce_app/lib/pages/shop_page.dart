@@ -73,7 +73,7 @@ class _ShopPageState extends State<ShopPage> {
         Expanded(
           child: ListView.builder(
             itemCount: 4,
-						scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               Shoe shoe = Shoe(
                   name: 'Blue',
@@ -86,6 +86,13 @@ class _ShopPageState extends State<ShopPage> {
             },
           ),
         ),
+
+        const Padding(
+          padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
+          child: Divider(
+            color: Colors.white,
+          ),
+        )
       ],
     );
   }
