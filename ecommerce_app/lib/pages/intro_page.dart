@@ -26,7 +26,7 @@ class IntroPage extends StatelessWidget {
               const SizedBox(height: 48),
             
               // title
-              Text(
+              const Text(
                 'Just Do It', 
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -35,7 +35,7 @@ class IntroPage extends StatelessWidget {
               ),
             
               // sub title
-              Text(
+              const Text(
                 'Brand new sneakers and custom kicks made with premium quality', 
                 style: TextStyle(
                   fontSize: 16,
@@ -51,17 +51,17 @@ class IntroPage extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context, 
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => const HomePage(),
                     ),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[900],
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    padding: EdgeInsets.all(25), 
-                    child: Center(
-                      child: const Text(
+                    padding: const EdgeInsets.all(25), 
+                    child: const Center(
+                      child: Text(
                         "Shop Now",
                         style: TextStyle(color: Colors.white),
                       ),

@@ -9,19 +9,19 @@ class Cart extends ChangeNotifier{
       name: 'BLUE',
       price: '200',
       description: 'Something',
-      imagePath: 'lib/images/blue.png',
+      imagePath: 'lib/images/blue.jpg',
     ),
     Shoe(
       name: 'RED',
       price: '200',
       description: 'Something',
-      imagePath: 'lib/images/red.png',
+      imagePath: 'lib/images/red.jpg',
     ),
     Shoe(
       name: 'BROWN',
       price: '200',
       description: 'Something',
-      imagePath: 'lib/images/brown.png',
+      imagePath: 'lib/images/brown.jpg',
     ),
   ];
 

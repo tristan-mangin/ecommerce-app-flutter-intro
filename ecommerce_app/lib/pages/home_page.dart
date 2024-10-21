@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
-            icon: Padding(
+            icon: const Padding(
               padding: EdgeInsets.only(left: 12.0),
               child: Icon(
                 Icons.menu,
@@ -57,63 +57,64 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       drawer: Drawer(
-          backgroundColor: Colors.grey[900],
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        backgroundColor: Colors.grey[900],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
               children: [
-                Column(
-                  children: [
-                    // Logo
-                    DrawerHeader(
-                      child: Image.asset(
-                        'lib/images/nike.png',
-                        // color: Colors.white,
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                      child: Divider(
-                        color: Colors.grey[800],
-                      ),
-                    ),
-
-                    // Other pages
-                    const Padding(
-                      padding: EdgeInsets.only(left: 25.0),
-                      child: ListTile(
-                        leading: Icon(Icons.home, color: Colors.white),
-                        title: Text(
-                          'Home',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-
-                    const Padding(
-                      padding: EdgeInsets.only(left: 25.0),
-                      child: ListTile(
-                        leading: Icon(Icons.info, color: Colors.white),
-                        title: Text(
-                          'About',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ],
+                // Logo
+                DrawerHeader(
+                  child: Image.asset(
+                    'lib/images/nike.png',
+                    color: Colors.white,
+                  ),
                 ),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Divider(
+                    color: Colors.grey[800],
+                  ),
+                ),
+
+                // Other pages
                 const Padding(
-                  padding: EdgeInsets.only(left: 25.0, bottom: 25),
+                  padding: EdgeInsets.only(left: 25.0),
                   child: ListTile(
-                    leading: Icon(Icons.logout, color: Colors.white),
+                    leading: Icon(Icons.home, color: Colors.white),
                     title: Text(
-                      'Logout',
+                      'Home',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                )
-              ])
-						),
+                ),
+
+                const Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: ListTile(
+                    leading: Icon(Icons.info, color: Colors.white),
+                    title: Text(
+                      'About',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 25.0, bottom: 25),
+              child: ListTile(
+                leading: Icon(Icons.logout, color: Colors.white),
+                title: Text(
+                  'Logout',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            )
+          ]
+        )
+      ),
       body: _pages[_selectedIndex],
     );
   }
