@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 
 class ShoeTile extends StatelessWidget {
   Shoe shoe;
-  ShoeTile({super.key, required this.shoe});
+  void Function()? onTap;
+  ShoeTile({super.key, required this.shoe, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 25),
-      width: 200, 
+      width: 200,
       decoration: BoxDecoration(
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(12),
@@ -19,21 +20,24 @@ class ShoeTile extends StatelessWidget {
         children: [
           // Image
           ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.asset(shoe.imagePath)),
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(shoe.imagePath)),
 
           // description
-          Text(
-            shoe.description,
-            style: TextStyle(
-              color: Colors.grey[600],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              shoe.description,
+              style: TextStyle(
+                color: Colors.grey[600],
+              ),
             ),
           ),
 
           // price + details
           Padding(
             padding: const EdgeInsets.only(left: 25.0),
-            child: Row( 
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -48,16 +52,14 @@ class ShoeTile extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
-            
+
                     const SizedBox(height: 5),
-            
+
                     // price
-                    Text(
-                      '\$' + shoe.price,
-                      style: const TextStyle(
-                        color: Colors.grey,
-                      )
-                    ),
+                    Text('\$' + shoe.price,
+                        style: const TextStyle(
+                          color: Colors.grey,
+                        )),
                   ],
                 ),
               ],
@@ -65,18 +67,20 @@ class ShoeTile extends StatelessWidget {
           ),
 
           // btton to add to cart
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: const BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                bottomRight: Radius.circular(12),
-              )
-            ),
-            child: const Icon(
-              Icons.add, 
-              color: Colors.white,
+          GestureDetector(
+            onTap: onTap,
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    bottomRight: Radius.circular(12),
+                  )),
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
             ),
           ),
         ],
